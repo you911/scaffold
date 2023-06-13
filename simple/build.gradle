@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'tech.wcw.simple'
+    compileSdk rootProject.ext.compileSdk
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "tech.wcw.scaffold.simple"
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    kapt {
+        generateStubs = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation rootProject.ext.deps.junit
+    androidTestImplementation rootProject.ext.deps.android_junit
+    androidTestImplementation rootProject.ext.deps.espresso_core
+    implementation rootProject.ext.deps.constraintlayout
+    implementation rootProject.ext.deps.navigation_fragment_ktx
+    implementation rootProject.ext.deps.navigation_ui_ktx
+    implementation project(path: ':library')
+
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/index_fragment">
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="tech.wcw.simple.ui.fragment.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/index_fragment"
+        android:name="tech.wcw.simple.ui.fragment.IndexFragment"
+        android:label="index_fragment"
+        tools:layout="@layout/fragment_index" />
+    <fragment
+        android:id="@+id/data_fragment"
+        android:name="tech.wcw.simple.ui.fragment.DataFragment"
+        android:label="data_fragment"
+        tools:layout="@layout/fragment_data" />
+    <fragment
+        android:id="@+id/setting_fragment"
+        android:name="tech.wcw.simple.ui.fragment.SettingFragment"
+        android:label="setting_fragment"
+        tools:layout="@layout/fragment_data" />
+    <fragment
+        android:id="@+id/user_manager_fragment"
+        android:name="tech.wcw.simple.ui.fragment.UserManagerFragment"
+        android:label="user_manager"
+        tools:layout="@layout/fragment_user_manager" />
+</navigation>
